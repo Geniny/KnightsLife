@@ -6,12 +6,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.geniny.knightslife.KnightGame;
 import com.geniny.knightslife.Settings;
 import com.geniny.knightslife.control.KnightController;
+import com.geniny.knightslife.model.Camera;
 import com.geniny.knightslife.model.Knight;
 import com.geniny.knightslife.model.TERRAIN;
 import com.geniny.knightslife.model.TileMap;
 
 public class GameScreen extends AbstractScreen {
 
+    private Camera camera;
     private Knight knight;
     private Texture player , grass1 , grass2;
     private SpriteBatch batch;
@@ -24,6 +26,7 @@ public class GameScreen extends AbstractScreen {
     public GameScreen(KnightGame app) {
         super(app);
 
+        camera = new Camera();
         grass1 = new Texture("res/grass1.png");
         grass2 = new Texture("res/grass2.png");
         player = new Texture("res/brendan_walk_south_1.png");
@@ -41,8 +44,12 @@ public class GameScreen extends AbstractScreen {
 
     @Override
     public void render(float delta) {
+        camera.update(knight.getWorldX()+0.5f,knight.getWorldY()+0.5f);
+        knight.update(delta);
         batch.begin();
 
+        float worldStartX = Gdx.graphics.getWidth()/2 - camera.getCameraX()*Settings.SCALED_TILE_SIZE;
+        float worldStartY = Gdx.graphics.getHeight()/2 - camera.getCameraY()*Settings.SCALED_TILE_SIZE;
         for(int x = 0; x < map.getWidth(); x++)
             for(int y = 0; y < map.getHeight(); y++) {
                 Texture render;
@@ -52,12 +59,12 @@ public class GameScreen extends AbstractScreen {
                 else
                     render = grass2;
                 batch.draw(render,
-                        x * Settings.SCALED_TILE_SIZE,
-                        y * Settings.SCALED_TILE_SIZE,
+                        worldStartX + x * Settings.SCALED_TILE_SIZE,
+                        worldStartY + y * Settings.SCALED_TILE_SIZE,
                         Settings.SCALED_TILE_SIZE,
                         Settings.SCALED_TILE_SIZE);
             }
-        batch.draw(player,knight.getX()* Settings.SCALED_TILE_SIZE,knight.getY()*Settings.SCALED_TILE_SIZE,Settings.SCALED_TILE_SIZE,Settings.SCALED_TILE_SIZE*1.5f);
+        batch.draw(player,worldStartX + knight.getWorldX()* Settings.SCALED_TILE_SIZE,worldStartY+ knight.getWorldY()*Settings.SCALED_TILE_SIZE,Settings.SCALED_TILE_SIZE,Settings.SCALED_TILE_SIZE*1.5f);
 
         batch.end();
 

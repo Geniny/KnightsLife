@@ -10,8 +10,8 @@ public class Main {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
         config.title = "Knight's Life";
-        config.height = 400;
-        config.width = 600;
+        config.height = 600;
+        config.width = 800;
         config.vSyncEnabled = true;
 
         new LwjglApplication(new KnightGame(), config);
