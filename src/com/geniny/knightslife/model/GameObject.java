@@ -4,5 +4,4 @@ public abstract class GameObject {
 
     protected int x;
     protected int y;
-    protected TileMap map;
 }

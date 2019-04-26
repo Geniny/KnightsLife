@@ -1,25 +1,32 @@
 package com.geniny.knightslife.model;
 
+
 public class Tile {
 
-    private Knight knight;
-    private TERRAIN terrain;
+	private TERRAIN terrain;
+	private Knight knight;
+	private WorldObject object;
 
-    public TERRAIN getTerrain() {
-        return terrain;
-    }
+	public Tile(TERRAIN terrain)
+	{
+		this.terrain = terrain;
+	}
 
-    public Tile(TERRAIN terrain)
-    {
-        this.terrain = terrain;
-    }
+	public TERRAIN getTerrain()
+	{
+		return terrain;
+	}
 
-    public void setKnight(Knight knight) {
-        this.knight = knight;
-    }
+	public Knight getKnight(){
+		return knight;
+	}
 
-    public Knight getKnight()
-    {
-        return knight;
-    }
+	public void setKnight(Knight knight){
+		this.knight = knight;
+	}
+
+	public WorldObject getObject(){ return object; }
+
+	public void setObject(WorldObject object){ this.object = object; }
+
 }

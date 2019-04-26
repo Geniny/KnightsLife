@@ -1,0 +1,118 @@
+
+textureres.png
+size: 128,64
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+k_stand_east
+  rotate: false
+  xy: 23, 33
+  size: 16, 29
+  orig: 16, 29
+  offset: 0, 0
+  index: -1
+k_walk_east
+  rotate: false
+  xy: 23, 33
+  size: 16, 29
+  orig: 16, 29
+  offset: 0, 0
+  index: 1
+k_stand_north
+  rotate: false
+  xy: 2, 2
+  size: 18, 29
+  orig: 18, 29
+  offset: 0, 0
+  index: -1
+k_walk_north
+  rotate: false
+  xy: 2, 2
+  size: 18, 29
+  orig: 18, 29
+  offset: 0, 0
+  index: 1
+k_stand_south
+  rotate: false
+  xy: 2, 33
+  size: 19, 29
+  orig: 19, 29
+  offset: 0, 0
+  index: -1
+k_walk_south
+  rotate: false
+  xy: 2, 33
+  size: 19, 29
+  orig: 19, 29
+  offset: 0, 0
+  index: 1
+k_stand_west
+  rotate: false
+  xy: 41, 33
+  size: 16, 29
+  orig: 16, 29
+  offset: 0, 0
+  index: -1
+k_walk_west
+  rotate: false
+  xy: 41, 33
+  size: 16, 29
+  orig: 16, 29
+  offset: 0, 0
+  index: 1
+k_walk_east
+  rotate: false
+  xy: 42, 2
+  size: 16, 29
+  orig: 16, 29
+  offset: 0, 0
+  index: 2
+k_walk_east
+  rotate: false
+  xy: 96, 4
+  size: 16, 28
+  orig: 16, 28
+  offset: 0, 0
+  index: 0
+k_walk_north
+  rotate: false
+  xy: 22, 2
+  size: 18, 29
+  orig: 18, 29
+  offset: 0, 0
+  index: 2
+k_walk_north
+  rotate: false
+  xy: 59, 33
+  size: 16, 29
+  orig: 16, 29
+  offset: 0, 0
+  index: 0
+k_walk_south
+  rotate: false
+  xy: 77, 34
+  size: 18, 28
+  orig: 18, 28
+  offset: 0, 0
+  index: 0
+k_walk_south
+  rotate: false
+  xy: 97, 34
+  size: 18, 28
+  orig: 18, 28
+  offset: 0, 0
+  index: 2
+k_walk_west
+  rotate: false
+  xy: 60, 2
+  size: 16, 29
+  orig: 16, 29
+  offset: 0, 0
+  index: 0
+k_walk_west
+  rotate: false
+  xy: 78, 3
+  size: 16, 29
+  orig: 16, 29
+  offset: 0, 0
+  index: 2
