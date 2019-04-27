@@ -15,7 +15,7 @@ public class Knight extends GameObject implements YSortable {
     private boolean moveRequestThisFrame;
     private AnimationSet animations;
 
-    private float WALK_TIME_PER_TILE = 0.3f;
+    private float WALK_TIME_PER_TILE = 0.4f;
     private float REFACE_TIME = 0.1f;
 
     public enum KNIGHT_STATE
@@ -49,11 +49,19 @@ public class Knight extends GameObject implements YSortable {
             return false;
         }
         if(x+dir.getDx() >= map.getWidth() || x+dir.getDx() < 0 || y+dir.getDy() >= map.getHeight() || y +dir.getDy() <0){
+            if(dir == DIRECTION.SOUTH || dir == DIRECTION.NORTH)
+                dir = DIRECTION.EAST;
+            else if (dir == DIRECTION.WEST )
+                dir = DIRECTION.NORTH;
+            else if(dir == DIRECTION.EAST)
+                dir = DIRECTION.SOUTH;
+
             reface(dir);
             return false;
         }
         if(map.getTile(x+dir.getDx(),y+dir.getDy()).getKnight() != null)
         {
+
             reface(dir);
             return false;
         }

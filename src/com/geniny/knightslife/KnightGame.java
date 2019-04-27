@@ -4,20 +4,31 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.geniny.knightslife.utils.SkinGenerator;
 import com.geniny.knightslife.view.GameScreen;
 
 public class KnightGame extends Game {
 
-    private GameScreen screen;
+    private GameScreen screen, screen2;
     private AssetManager assetManager;
+    private Skin skin;
 
     @Override
     public void create() {
         assetManager = new AssetManager();
         assetManager.load("res/packed/textureres.atlas", TextureAtlas.class);
+        assetManager.load("res/packed/uipack.atlas",TextureAtlas.class);
+        assetManager.load("res/font/small_letters_font.fnt", BitmapFont.class);
         assetManager.finishLoading();
-        screen = new GameScreen(this);
+        skin = SkinGenerator.generateSkin(assetManager);
+        screen = GameScreen.InitializeScreen(this);
+
+        screen2 = GameScreen.InitializeScreen(this);
+        if(screen2 == null)
+            System.out.println("screen 2 is null");
 
         this.setScreen(screen);
     }
@@ -30,7 +41,9 @@ public class KnightGame extends Game {
 
         super.render();
     }
-
+    public Skin  getSkin(){
+        return skin;
+    }
     public  AssetManager getAssetManager(){
         return assetManager;
     }

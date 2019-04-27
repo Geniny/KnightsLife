@@ -11,6 +11,11 @@ public abstract class  AbstractScreen implements Screen {
         this.app = app;
     }
 
+    public KnightGame getApp()
+    {
+        return app;
+    }
+
     @Override
     public  abstract void show();
 
