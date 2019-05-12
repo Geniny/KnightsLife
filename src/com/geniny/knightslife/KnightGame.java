@@ -27,7 +27,7 @@ public class KnightGame extends Game {
         screen = GameScreen.InitializeScreen(this);
 
         screen2 = GameScreen.InitializeScreen(this);
-        if(screen2 == null)
+        if(screen2 == screen)
             System.out.println("screen 2 is null");
 
         this.setScreen(screen);

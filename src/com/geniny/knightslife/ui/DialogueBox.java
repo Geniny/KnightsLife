@@ -1,4 +1,4 @@
-package com.geniny.knightslife.view;
+package com.geniny.knightslife.ui;
 
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
